@@ -90,5 +90,7 @@ print bot.respond(sentence)
 sentence1 = "Is there a court open today from 5 to 7?"
 resp = bot.respond(sentence1)
 question = resp.split(' ')
-if question[0] == "aaa" : accessDatabase(question[1],question[3])
+if question[0] == "aaa" : 
+    print("aaa")
+    accessDatabase(question[1],question[3])
 print bot.respond(sentence1)
