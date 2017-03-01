@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="1.0.1">
+ <category>
+  <pattern>HELLO</pattern>
+  <template>
+   <random>
+    <li>Hi, human !</li>
+    <li>Hello UVA student !</li>
+   </random>
+  </template>
+ </category>
+ 
+ <category>
+  <pattern>WHAT TIME IS IT</pattern>
+  <template>The local time is: <system>date</system></template>
+ </category>
+</aiml>
