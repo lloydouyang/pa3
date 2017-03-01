@@ -15,7 +15,7 @@ def accessDatabase(year,month,day,start, end):
             result = cursor.fetchall()
             print(result)
             print(result[1][2])
-            print(result[1][2].day)
+            # print(result[1][2].day)
     finally:
         connection.close()
 
