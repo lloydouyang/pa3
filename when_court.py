@@ -1,6 +1,6 @@
 import pymysql.cursors
 
-def accessDatabase():
+def accessDatabase(start, end):
     # Connect to the database
     connection = pymysql.connect(host='uvatennis.martyhumphrey.info',
                              port=3306,

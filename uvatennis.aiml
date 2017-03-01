@@ -17,7 +17,7 @@
 
  <category>
   <pattern>Is there a court open today from * to * </pattern>
-  <template>aaa <star index = "1"/> to <star index = "2"/></template>
+  <template>aaa <star index = "1"/> to <star index = "2"/> <system>date</system></template>
  </category>
 
 <category>
