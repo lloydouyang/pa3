@@ -17,7 +17,7 @@ def accessDatabase(year,month,day,start, end):
             a[:5]=true
             for i in range(0,numrows-1):
                 if (result[i][1].year==year and result[i][1].month==month and result[i][1].day==day) :
-                    if ((result[i][2]<start and result[i][3]>end) or (result[i][2]<end and result[i][3]>end) or (result[i][2]<start and result[i][3]>start):
+                    if ((result[i][2]<start and result[i][3]>end) or (result[i][2]<end and result[i][3]>end) or (result[i][2]<start and result[i][3]>start)):
                         a[result[i][0]]=False
             for k in range(0,5):
                 if (a[k]==true) :
