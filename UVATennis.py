@@ -92,5 +92,5 @@ resp = bot.respond(sentence1)
 question = resp.split(' ')
 if question[0] == "aaa" : 
     print("aaa")
-    accessDatabase(question[1],question[3])
+    when_court.accessDatabase(question[1],question[3])
 print bot.respond(sentence1)

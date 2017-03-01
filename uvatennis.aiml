@@ -16,12 +16,12 @@
  </category>
 
  <category>
-  <pattern>IS THERE A COURT OPEN TODAY FROM * TO * </pattern>
+  <pattern>IS THERE A COURT OPEN TODAY FROM * TO *</pattern>
   <template>aaa <star index = "1"/> to <star index = "2"/> <system>date</system></template>
  </category>
 
 <category>
-  <pattern>When is Court * open today</pattern>
+  <pattern>WHEN IS COURT * OPEN TODAY</pattern>
   <template>bbb <star index = "1"/></template>
  </category>
 
