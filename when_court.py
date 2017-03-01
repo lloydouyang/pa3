@@ -1,6 +1,6 @@
 import pymysql.cursors
 
-def accessDatabase(start, end):
+def accessDatabase(year,month,day,start, end):
     # Connect to the database
     connection = pymysql.connect(host='uvatennis.martyhumphrey.info',
                              port=3306,
@@ -10,13 +10,12 @@ def accessDatabase(start, end):
     try:
         with connection.cursor() as cursor:
         # Read a single record
-        # sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
-        # cursor.execute(sql, ('webmaster@python.org',))
-        # result = cursor.fetchone()
-            print("1234566")
+        sql = "SELECT `court`,`date`,`starttime`,`endtime` FROM `reservations`
+        cursor.execute(sql)
+        result = cursor.fetchone()
+            print(result)
     finally:
         connection.close()
-        print("66")
 
 if __name__ == '__main__':
     accessDatabase()
