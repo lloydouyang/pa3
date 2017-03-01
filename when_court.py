@@ -10,7 +10,7 @@ def accessDatabase(year,month,day,start, end):
     try:
         with connection.cursor() as cursor:
         # Read a single record
-            sql = "SELECT `court`,`date`,`starttime`,`endtime` FROM `reservations`
+            sql = "SELECT `court`,`date`,`starttime`,`endtime` FROM `reservations`"
             cursor.execute(sql)
             result = cursor.fetchone()
             print(result)
