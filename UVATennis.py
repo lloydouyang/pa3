@@ -43,6 +43,8 @@ import logging
 import os
 import aiml
 import when_court
+import dateutil.parser
+
 bot = aiml.Kernel()
 bot.learn("uvatennis.aiml")
 
@@ -92,7 +94,7 @@ resp = bot.respond(sentence1)
 question = resp.split(' ')
 if question[0] == "aaa" : 
     print("aaa")
-    time = dateparser.parse(' '.join(question[4:]))
+    time =  dateutil.parser.parse(' '.join(question[4:]))
     print(time)
     when_court.accessDatabase(question[1],question[3])
 dateparser.parse
