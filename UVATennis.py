@@ -96,6 +96,9 @@ if question[0] == "aaa" :
     print("aaa")
     time =  dateutil.parser.parse(' '.join(question[4:]))
     print(time)
+    print(time.year)
+    print(time.month)
+    print(time.day)
     when_court.accessDatabase(question[1],question[3])
 
 print bot.respond(sentence1)
