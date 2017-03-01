@@ -14,6 +14,8 @@ def accessDatabase(year,month,day,start, end):
             cursor.execute(sql)
             result = cursor.fetchall()
             print(result)
+            print(result[1][1])
+            print(result[1][1].day)
             print(result[1][2])
             # print(result[1][2].day)
     finally:
