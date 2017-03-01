@@ -7,6 +7,7 @@ def accessDatabase(year,month,day,start, end):
                              user='UVATennisUser',
                              passwd='WR6V2vxjBbqNqbts',
                              db='tennis')
+    s=""
     try:
         with connection.cursor() as cursor:
         # Read a single record
@@ -22,10 +23,15 @@ def accessDatabase(year,month,day,start, end):
                         a[result[i][0]]=False
             for k in range(1,7):
                 if (a[k]==True) :
-                    print(k)
+                    if (s!=""):
+                        s=s+", "
+                    s=s+str(k)
 
     finally:
         connection.close()
+    if s=="" return "No court is open"
+    s="Open courts: "+s
+    return s
 
 if __name__ == '__main__':
     accessDatabase()
