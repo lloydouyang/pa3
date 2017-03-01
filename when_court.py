@@ -29,7 +29,7 @@ def accessDatabase(year,month,day,start, end):
 
     finally:
         connection.close()
-    if s=="" return "No court is open"
+    if (s==""): return "No court is open"
     s="Open courts: "+s
     return s
 
