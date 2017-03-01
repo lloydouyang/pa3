@@ -14,7 +14,7 @@ def accessDatabase(year,month,day,start, end):
             cursor.execute(sql)
             result = cursor.fetchall()
             numrows = len(result)    
-            a[:5]=true
+            a[:5]=True
             for i in range(0,numrows-1):
                 if (result[i][1].year==year and result[i][1].month==month and result[i][1].day==day) :
                     if ((result[i][2]<start and result[i][3]>end) or (result[i][2]<end and result[i][3]>end) or (result[i][2]<start and result[i][3]>start)):
