@@ -12,7 +12,7 @@ def accessDatabase(year,month,day,start, end):
         # Read a single record
             sql = "SELECT `court`,`date`,`starttime`,`endtime` FROM `reservations`"
             cursor.execute(sql)
-            result = cursor.fetchone()
+            result = cursor.fetch()
             print(result)
     finally:
         connection.close()
