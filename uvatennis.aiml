@@ -14,4 +14,16 @@
   <pattern>WHAT TIME IS IT</pattern>
   <template>The local time is: <system>date</system></template>
  </category>
+
+ <category>
+  <pattern>Is there a court open today from * to * </pattern>
+  <template>aaa <star index = "1"/> to <star index = "2"/></template>
+ </category>
+
+<category>
+  <pattern>When is Court * open today </pattern>
+  <template>bbb <star index = "1"/></template>
+ </category>
+
+
 </aiml>

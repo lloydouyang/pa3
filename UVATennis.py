@@ -42,6 +42,7 @@ import json
 import logging
 import os
 import aiml
+import when_court
 bot = aiml.Kernel()
 bot.learn("uvatennis.aiml")
 
@@ -79,8 +80,15 @@ def lambda_handler(event, context):
     command = params['command'][0]
     channel = params['channel_name'][0]
     command_text = params['text'][0]
-
+    resp = bot.respond(command_text)
+    question = resp.split(' ')
+    if question[0] == "aaa" : accessDatabase(question[1],question[3])
     return respond(None, "%s : %s" % (command_text, bot.respond(command_text)))
 
 sentence = "What time is it?"
 print bot.respond(sentence)
+sentence1 = "Is there a court open today from 5 to 7?"
+resp = bot.respond(sentence1)
+question = resp.split(' ')
+if question[0] == "aaa" : accessDatabase(question[1],question[3])
+print bot.respond(sentence1)
