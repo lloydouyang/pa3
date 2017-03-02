@@ -93,7 +93,7 @@ def lambda_handler(event, context):
 sentence = "What time is it?"
 print bot.respond(sentence)
 
-sentence2 = "Is there a court open today from 5 to 7?"
+sentence2 = "Is there a court open today from 13 to 14?"
 resp = bot.respond(sentence2)
 question = resp.split(' ')
 if question[0] == "aaa" : 
