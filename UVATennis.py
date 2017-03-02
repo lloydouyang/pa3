@@ -89,14 +89,26 @@ def lambda_handler(event, context):
         return respond(None, "%s : %s" % (command_text, reply))
     return respond(None, "%s : %s" % (command_text, bot.respond(command_text)))
 
+
 sentence = "What time is it?"
 print bot.respond(sentence)
-sentence1 = "Is there a court open today from 5 to 7?"
-resp = bot.respond(sentence1)
+
+sentence2 = "Is there a court open today from 5 to 7?"
+resp = bot.respond(sentence2)
 question = resp.split(' ')
 if question[0] == "aaa" : 
     time =  dateutil.parser.parse(' '.join(question[4:]))
     reply = when_court.accessDatabase(time.year,time.month,time.day,question[1],question[3])
     print(reply)
+
+# sentence3 = "When is Court 3 open today?"
+# resp = bot.respond(sentence3)
+# question = resp.split(' ')
+# if question[0] == "aaa" : 
+#     time =  dateutil.parser.parse(' '.join(question[4:]))
+#     reply = when_court.accessDatabase(time.year,time.month,time.day,question[1],question[3])
+#     print(reply)
+
+
 
 
