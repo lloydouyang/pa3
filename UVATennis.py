@@ -100,7 +100,7 @@ question = resp.split(' ')
 if question[0] == "aaa" : 
     time =  dateutil.parser.parse(' '.join(question[4:]))
     print(question[1])
-    print(str(datetime.timedelta(question[1])))
+    print(str(question[1]))
     reply = when_court.accessDatabase(time.year,time.month,time.day,question[1],question[3])
     print(reply)
 sentence2 = "Is there a court open today from 16 to 17?"
