@@ -149,10 +149,10 @@ def lambda_handler(event, context):
     return respond(None, "%s : %s" % (command_text, reply))
 
 
-# sentence = "What time is it?"
-# print(sentence)
-# print bot.respond(sentence)
-# print
+sentence = "What time is it?"
+print(sentence)
+print bot.respond(sentence)
+
 
 
 
