@@ -54,13 +54,13 @@ from base64 import b64decode
 from urlparse import parse_qs
 
 
-# ENCRYPTED_EXPECTED_TOKEN = os.environ['kmsEncryptedToken']
+ENCRYPTED_EXPECTED_TOKEN = os.environ['kmsEncryptedToken']
 
-# kms = boto3.client('kms')
-# expected_token = kms.decrypt(CiphertextBlob=b64decode(ENCRYPTED_EXPECTED_TOKEN))['Plaintext']
+kms = boto3.client('kms')
+expected_token = kms.decrypt(CiphertextBlob=b64decode(ENCRYPTED_EXPECTED_TOKEN))['Plaintext']
 
-# logger = logging.getLogger()
-# logger.setLevel(logging.INFO)
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 
 def respond(err, res=None):
