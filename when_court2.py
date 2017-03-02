@@ -10,7 +10,7 @@ def accessDatabase(year,month,day,court):
     s=""
     try:
         with connection.cursor() as cursor:
-        # Read a single record
+        # Read in the following columns and then use python to process
             sql = "SELECT `court`,`date`,`starttime`,`endtime` FROM `reservations`"
             cursor.execute(sql)
             result = cursor.fetchall()

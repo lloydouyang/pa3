@@ -54,13 +54,13 @@ from base64 import b64decode
 from urlparse import parse_qs
 
 
-ENCRYPTED_EXPECTED_TOKEN = os.environ['kmsEncryptedToken']
+# ENCRYPTED_EXPECTED_TOKEN = os.environ['kmsEncryptedToken']
 
-kms = boto3.client('kms')
-expected_token = kms.decrypt(CiphertextBlob=b64decode(ENCRYPTED_EXPECTED_TOKEN))['Plaintext']
+# kms = boto3.client('kms')
+# expected_token = kms.decrypt(CiphertextBlob=b64decode(ENCRYPTED_EXPECTED_TOKEN))['Plaintext']
 
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
+# logger = logging.getLogger()
+# logger.setLevel(logging.INFO)
 
 
 def respond(err, res=None):
@@ -93,11 +93,11 @@ def lambda_handler(event, context):
         time =  dateutil.parser.parse(' '.join(question[4:]))
         # format the time input
         s1=str(question[1])
-        s2=str(question[2])
+        s2=str(question[3])
         if (len(s1)==1):
             s1="0"+s1+":00"
         else:
-            if (len(question[1])==2):
+            if (len(s1)==2):
                 s1=s1+":00"
             else:
                 if (len(s1)==3):
@@ -156,18 +156,18 @@ print bot.respond(sentence)
 
 
 
-# sentence2 = "Is there a court open today from 16:00 to 17:00?"
+# sentence2 = "Is there a court open today from 7 to 22?"
 # resp = bot.respond(sentence2)
 # question = resp.split(' ')
 # if question[0] == "aaa" : 
 #     time =  dateutil.parser.parse(' '.join(question[4:]))
 #     # format the time input
 #     s1=str(question[1])
-#     s2=str(question[2])
+#     s2=str(question[3])
 #     if (len(s1)==1):
 #         s1="0"+s1+":00"
 #     else:
-#         if (len(question[1])==2):
+#         if (len(s1)==2):
 #             s1=s1+":00"
 #         else:
 #             if (len(s1)==3):

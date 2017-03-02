@@ -10,7 +10,7 @@ def accessDatabase(year,month,day,start, end):
     s=""
     try:
         with connection.cursor() as cursor:
-        # Read a single record
+        # Read in the following columns and then use python to process
             sql = "SELECT `court`,`date`,`starttime`,`endtime` FROM `reservations`"
             cursor.execute(sql)
             result = cursor.fetchall()
@@ -25,7 +25,8 @@ def accessDatabase(year,month,day,start, end):
                     re=str(result[i][3])[:-3]
                     if len(rs)==4: rs="0"+rs
                     if len(re)==4: re="0"+re
-                    if ((rs<start and re>end) or (rs<end and re>end) or (rs<start and re>start)):
+                    if result[i][0]-5==0: print(rs," ",re)
+                    if ((rs>start and re<end) or (rs<end and re>end) or (rs<start and re>start)):
                         a[result[i][0]]=False
             for k in range(1,7):
                 if (a[k]==True) :
