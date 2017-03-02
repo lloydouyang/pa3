@@ -93,7 +93,14 @@ def lambda_handler(event, context):
 sentence = "What time is it?"
 print bot.respond(sentence)
 
-sentence2 = "Is there a court open today from 13 to 14?"
+sentence2 = "Is there a court open today from 11 to 12?"
+resp = bot.respond(sentence2)
+question = resp.split(' ')
+if question[0] == "aaa" : 
+    time =  dateutil.parser.parse(' '.join(question[4:]))
+    reply = when_court.accessDatabase(time.year,time.month,time.day,question[1],question[3])
+    print(reply)
+sentence2 = "Is there a court open today from 16 to 17?"
 resp = bot.respond(sentence2)
 question = resp.split(' ')
 if question[0] == "aaa" : 
@@ -103,10 +110,10 @@ if question[0] == "aaa" :
 
 # sentence3 = "When is Court 3 open today?"
 # resp = bot.respond(sentence3)
-# question = resp.split(' ')
-# if question[0] == "aaa" : 
-#     time =  dateutil.parser.parse(' '.join(question[4:]))
-#     reply = when_court.accessDatabase(time.year,time.month,time.day,question[1],question[3])
+# question2 = resp.split(' ')
+# if question2[0] == "bbb" : 
+#     time =  dateutil.parser.parse(' '.join(question2[2:]))
+#     reply = when_court2.accessDatabase(time.year,time.month,time.day,question2[1])
 #     print(reply)
 
 
