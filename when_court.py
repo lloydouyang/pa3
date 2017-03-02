@@ -15,12 +15,17 @@ def accessDatabase(year,month,day,start, end):
             cursor.execute(sql)
             result = cursor.fetchall()
             numrows = len(result)    
-            print(str(result[0][2]))
+            
 
             a = [True] * 7
             for i in range(0,numrows):
                 if (result[i][1].year==year and result[i][1].month==month and result[i][1].day==day) :
-                    if ((str(result[i][2])<start and str(result[i][3])>end) or (str(result[i][2])<end and str(result[i][3])>end) or (str(result[i][2])<start and str(result[i][3])>start)):
+                    #remove seconds because humans don't book tennis courts to the second
+                    rs=str(result[i][2])[:-3]
+                    re=str(result[i][3])[:-3]
+                    if len(rs)==4: rs="0"+rs
+                    if len(re)==4: re="0"+re
+                    if ((rs<start and re>end) or (rs<end and re>end) or (rs<start and re>start)):
                         a[result[i][0]]=False
             for k in range(1,7):
                 if (a[k]==True) :
@@ -31,7 +36,7 @@ def accessDatabase(year,month,day,start, end):
     finally:
         connection.close()
     if (s==""): return "No court is open"
-    s="Open courts: "+s
+    s="Open courts today are: "+s
     return s
 
 if __name__ == '__main__':

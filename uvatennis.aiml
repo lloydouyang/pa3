@@ -22,12 +22,12 @@
 
 <category>
   <pattern>WHEN IS COURT * OPEN TODAY</pattern>
-  <template>bbb <star index = "1"/><system>date</system></template>
+  <template>bbb <star index = "1"/> <system>date</system></template>
  </category>
 
 <category>
-  <pattern>WHO IS PLAYING AT COURT * TODAY</pattern>
-  <template>bbb <star index = "1"/><system>date</system></template>
+  <pattern>WHAT IS ONE OF THE EARLIEST AVAILABLE COURTS TOMORROW</pattern>
+  <template>ccc <star index = "1"/> <system>date</system></template>
  </category>
 
 </aiml>
